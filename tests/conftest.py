@@ -7,11 +7,10 @@ from selenium import webdriver
 from utils import attach
 from dotenv import load_dotenv
 
-# DEFAULT_BROWSER_VERSION = '126'
+DEFAULT_BROWSER_VERSION = '126'
 def pytest_addoption(parser):
     parser.addoption(
         '--browser',
-        choices=['99', '100', '113', '114', '120', '121', '122', '123', '124', '125', ''],
         default='126'
     )
 @pytest.fixture(scope='session', autouse=True)
@@ -21,7 +20,7 @@ def load_env():
 @pytest.fixture(scope='function')
 def browser_management(request):
     browser_version = request.config.getoption('--browser')
-    # browser_version = browser_version if browser_version != '' else DEFAULT_BROWSER_VERSION
+    browser_version = browser_version if browser_version != '' else DEFAULT_BROWSER_VERSION
     options = Options()
     selenoid_capabilities = {
         "browserName": "chrome",
