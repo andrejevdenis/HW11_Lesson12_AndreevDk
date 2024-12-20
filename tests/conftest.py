@@ -4,7 +4,7 @@ import pytest
 from selene import browser
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
-import utils.attach
+from utils import attach
 from dotenv import load_dotenv
 
 DEFAULT_BROWSER_VERSION = '120'
@@ -46,8 +46,8 @@ def browser_management(request):
 
     yield
 
-    utils.attach.add_screenshot(browser)
-    utils.attach.add_logs(browser)
-    utils.attach.add_html(browser)
-    utils.attach.add_video(browser)
+    attach.add_screenshot(browser)
+    attach.add_logs(browser)
+    attach.add_html(browser)
+    attach.add_video(browser)
     browser.quit()
