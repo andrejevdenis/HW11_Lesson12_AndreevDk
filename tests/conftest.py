@@ -7,12 +7,12 @@ from selenium import webdriver
 from utils import attach
 from dotenv import load_dotenv
 
-DEFAULT_BROWSER_VERSION = '120'
+DEFAULT_BROWSER_VERSION = '126'
 def pytest_addoption(parser):
     parser.addoption(
         '--browser',
-        choices=['99', '100', '113', '114', '120', '121', '122', '123', '124', '125'],
-        default='120'
+        choices=['99', '100', '113', '114', '120', '121', '122', '123', '124', '125', '126'],
+        default='126'
     )
 @pytest.fixture(scope='session', autouse=True)
 def load_env():
