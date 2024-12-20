@@ -1,0 +1,7 @@
+.idea/
+README.md
+__pycache__/
+tests/allure-results
+allure
+pages/allure_attachments.py
+tests/.env
